@@ -1,4 +1,6 @@
 # food-rating-system-android
 Java native food rating app based on https://github.com/panda281 food-rating-system API and DB
+## Sign in
 
-https://github.com/TheMoonK1d/food-rating-system-android/blob/master/screens/Screenshot_20230121-092614_Rate.jpg
+<img src="https://raw.githubusercontent.com/TheMoonK1d/food-rating-system-android/master/screens/Screenshot_20230121-092614_Rate.jpg" width="200" />
+
