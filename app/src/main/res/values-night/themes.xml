@@ -14,4 +14,9 @@
         <item name="android:statusBarColor">@color/bk</item>
         <item name="android:navigationBarColor">@color/bk</item>
     </style>
+
+    <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/montserrat_extra_bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
 </resources>

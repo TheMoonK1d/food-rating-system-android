@@ -26,7 +26,9 @@ public class LoginActivity extends AppCompatActivity {
         binding.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this , "Not Done", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this , "Welcome Back", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
 
