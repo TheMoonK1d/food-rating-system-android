@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.rate.databinding.FragmentHomeBinding;
+
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
         //return inflater.inflate(R.layout.fragment_home, container, false);
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        getActivity().setTitle("Home");
+        getActivity().setTitle("Popular");
         recyclerView = view.findViewById(R.id.home_r_view);
 
         setUp();
@@ -66,7 +66,7 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
         FoodHomeModelAdapter adapter = new FoodHomeModelAdapter(homeContext, foodHomeModels);
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(homeContext, 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(homeContext, 3));
 
 
 

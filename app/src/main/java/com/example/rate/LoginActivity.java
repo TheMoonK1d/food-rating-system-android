@@ -113,10 +113,10 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void onBackPressed() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Leaving?");
+        alertDialogBuilder.setTitle("😢");
         alertDialogBuilder
-                .setMessage("Do you really want to exit?")
-                .setCancelable(false)
+                .setMessage("Leaving so soon?")
+                .setCancelable(true)
                 .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, close

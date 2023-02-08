@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.rate.databinding.ActivityHomeBinding;
 import com.example.rate.databinding.ActivitySignupBinding;
@@ -64,18 +65,17 @@ public class HomeActivity extends AppCompatActivity {
                 this);
 
         // set title
-        alertDialogBuilder.setTitle("Wait!");
+        alertDialogBuilder.setTitle("✋🏾");
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Are you sure you want to logout?")
+                .setMessage("Are you sure you want to exit?")
                 .setCancelable(true)
                 .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, close
                         // current activity
-                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                        startActivity(intent);
+                        finishAffinity();
 
                     }
                 })
@@ -98,5 +98,52 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.opt_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.setting:
+                Toast.makeText(this, "Still working on it", Toast.LENGTH_SHORT).show();
+
+                return true;
+            case R.id.signout:
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        this);
+
+                // set title
+                alertDialogBuilder.setTitle("✋🏾");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Are you sure you want to sign out?")
+                        .setCancelable(true)
+                        .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                // if this button is clicked, close
+                                // current activity
+                                Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
+                                startActivity(intent);
+                                finish();
+
+                            }
+                        })
+                        .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                // if this button is clicked, just close
+                                // the dialog box and do nothing
+                                dialog.cancel();
+                            }
+                        });
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

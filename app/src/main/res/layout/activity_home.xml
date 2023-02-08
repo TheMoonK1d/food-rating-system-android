@@ -23,7 +23,6 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:elevation="0dp"
-
         app:labelVisibilityMode="selected"
         android:id="@+id/bottomNavigationView"
         android:background="@color/bk"

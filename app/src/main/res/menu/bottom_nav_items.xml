@@ -4,17 +4,17 @@
     <item
         android:id="@+id/home"
         android:enabled="true"
-        android:title="Home"
-        android:icon="@drawable/home"
+        android:title="Popular"
+        android:icon="@drawable/food"
         />
     <item
         android:id="@+id/food"
         android:enabled="true"
-        android:title="Food"
-        android:icon="@drawable/food"/>
+        android:title="Discover"
+        android:icon="@drawable/discover"/>
     <item
         android:id="@+id/profile"
         android:enabled="true"
-        android:title="Profile"
-        android:icon="@drawable/account"/>
+        android:title="Favorite"
+        android:icon="@drawable/fav"/>
 </menu>
