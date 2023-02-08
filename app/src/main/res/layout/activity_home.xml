@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     android:background="@color/bk"
     tools:context=".HomeActivity">
 
@@ -23,7 +24,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:elevation="0dp"
 
-
+        app:labelVisibilityMode="selected"
         android:id="@+id/bottomNavigationView"
         android:background="@color/bk"
         android:layout_width="match_parent"

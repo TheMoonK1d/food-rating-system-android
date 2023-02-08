@@ -13,10 +13,20 @@
 
         <item name="android:statusBarColor">@color/bk</item>
         <item name="android:navigationBarColor">@color/bk</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="floatingActionButtonStyle">@style/FloatingActionButtonStyle</item>
+
     </style>
+
 
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/montserrat_extra_bold</item>
         <item name="android:textSize">25sp</item>
+    </style>
+    <style name="FloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/floatingActionBtn</item>
+    </style>
+    <style name="floatingActionBtn" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">20%</item>
     </style>
 </resources>

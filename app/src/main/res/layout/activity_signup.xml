@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bk"
+    android:id="@+id/signup_layout"
     tools:context=".SignupActivity">
 
 
@@ -33,7 +34,7 @@
         android:background="@drawable/rnd_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_input" />
+        app:layout_constraintTop_toBottomOf="@+id/lastname_input" />
 
     <EditText
         android:id="@+id/firstname_input"
@@ -63,18 +64,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstname_input" />
 
-    <EditText
-        android:id="@+id/email_input"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Email"
-        android:textColorHint="@color/text"
-        android:textColor="@color/text"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastname_input" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -11,4 +11,7 @@
     <color name="text">#bbbbbb</color>
     <color name="bk">#1B1A1F</color>
     <color name="grey">#BCBCBC</color>
+    <color name="err">#DA3D3D</color>
+    <color name="dark">#17161B</color>
+
 </resources>
