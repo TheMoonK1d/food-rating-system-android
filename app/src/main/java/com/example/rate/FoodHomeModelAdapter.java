@@ -14,17 +14,20 @@ import java.util.ArrayList;
 
 public class FoodHomeModelAdapter extends RecyclerView.Adapter<FoodHomeModelAdapter.MyViewHolder> {
     Context context;
+    private final HomeFoodInterface homeFoodInterface;
     ArrayList<FoodHomeModel> foodHomeModels;
-    public FoodHomeModelAdapter(Context context, ArrayList<FoodHomeModel> foodHomeModels){
+
+    public FoodHomeModelAdapter(Context context, ArrayList<FoodHomeModel> foodHomeModels, HomeFoodInterface homeFoodInterface){
         this.foodHomeModels = foodHomeModels;
         this.context = context;
+        this.homeFoodInterface = homeFoodInterface;
     }
     @NonNull
     @Override
     public FoodHomeModelAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.home_view_item, parent, false);
-        return new FoodHomeModelAdapter.MyViewHolder(view);
+        return new FoodHomeModelAdapter.MyViewHolder(view, homeFoodInterface);
     }
 
     @Override
@@ -44,11 +47,23 @@ public class FoodHomeModelAdapter extends RecyclerView.Adapter<FoodHomeModelAdap
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView _foodImage;
         TextView _foodName, _foodRate;
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, HomeFoodInterface homeFoodInterface) {
             super(itemView);
             _foodImage = itemView.findViewById(R.id.foodimg);
             _foodName = itemView.findViewById(R.id.foodname);
             _foodRate = itemView.findViewById(R.id.foodrate);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (homeFoodInterface != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION){
+                            homeFoodInterface.itemClicked(position);
+                        }
+                    }
+                }
+            });
         }
+
     }
 }

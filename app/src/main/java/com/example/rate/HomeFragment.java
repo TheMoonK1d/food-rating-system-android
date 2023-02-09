@@ -1,6 +1,7 @@
 package com.example.rate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +48,7 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
                     foodNames[i],
                     foodRate[i],
                     foodHomeImg[i]
-                    ));
+            ));
         }
     }
 
@@ -60,10 +61,11 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
 
         getActivity().setTitle("Popular");
         recyclerView = view.findViewById(R.id.home_r_view);
+        //g
 
         setUp();
 
-        FoodHomeModelAdapter adapter = new FoodHomeModelAdapter(homeContext, foodHomeModels);
+        FoodHomeModelAdapter adapter = new FoodHomeModelAdapter(homeContext, foodHomeModels, this);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(homeContext, 3));
@@ -79,7 +81,7 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
 //        recyclerView.setAdapter(adapter);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(homeContext));
 
-return view;
+        return view;
 
     }
 
@@ -92,6 +94,11 @@ return view;
 
     @Override
     public void itemClicked(int position) {
+        Intent intent = new Intent(homeContext, DetailActivity.class);
 
+        intent.putExtra("FoodName",foodHomeModels.get(position).getName());
+        intent.putExtra("FoodImage",foodHomeModels.get(position).getImage());
+        intent.putExtra("FoodRate",foodHomeModels.get(position).getRated());
+        getActivity().startActivity(intent);
     }
 }
