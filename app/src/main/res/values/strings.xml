@@ -3,6 +3,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <array name="lst_name">
+        <item>Special pizza</item>
+        <item>Beyeaynet</item>
+        <item>Kitfo</item>
+        <item>Shiro</item>
+        <item>Special burger</item>
+    </array>
+
+    <array name="lst_res">
         <item>Tenbit pizza</item>
         <item>Yenat guada</item>
         <item>Welansa kitfo</item>

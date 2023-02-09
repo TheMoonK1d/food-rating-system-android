@@ -3,24 +3,19 @@ package com.example.rate;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.rate.databinding.ActivityHomeBinding;
-import com.example.rate.databinding.ActivitySignupBinding;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Objects;
 
@@ -47,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 if(item.getItemId()== R.id.food)
                 {
-                    fragment = new FoodFragment();
+                    fragment = new DiscoverFragment();
                 }
                 if(item.getItemId()== R.id.profile)
                 {

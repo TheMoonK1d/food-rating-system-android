@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/d"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FoodFragment">
+    tools:context=".DiscoverFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -36,10 +37,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="5dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="1dp"
@@ -47,22 +49,33 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_txt">
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:background="@color/or_dark"
+            android:fontFamily="@font/montserrat_light"
             android:hint="Search here"
             android:inputType="textFilter"
-            android:fontFamily="@font/montserrat_light"
-            android:background="@color/or_dark"/>
+            android:padding="10dp" />
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_gravity="center|end"
             android:layout_margin="10dp"
-            android:src="@drawable/baseline_search_24"
-            android:layout_gravity="center|end">
+            android:src="@drawable/baseline_search_24">
 
         </ImageView>
     </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/discover_r_item"
+        android:layout_width="409dp"
+        android:layout_height="633dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_txt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

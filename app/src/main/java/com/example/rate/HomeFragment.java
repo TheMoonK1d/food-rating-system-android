@@ -47,11 +47,13 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
         String[] foodNames = getResources().getStringArray(R.array.lst_name);
         String[] foodRate = getResources().getStringArray(R.array.lst_rate);
         String [] foodDes = getResources().getStringArray(R.array.lst_des);
+        String [] foodRes = getResources().getStringArray(R.array.lst_des);
         for (int i = 0; i< foodNames.length; i++){
             foodHomeModels.add(new FoodHomeModel(
                     foodNames[i],
                     foodRate[i],
                     foodHomeImg[i],
+                    foodRes[i],
                     foodDes[i]
             ));
         }
