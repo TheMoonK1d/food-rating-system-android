@@ -39,15 +39,16 @@ public class DetailActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        TextView rateval = findViewById(R.id.rateVal);
         Dialog dialog = new Dialog(DetailActivity.this);
         String name = getIntent().getStringExtra("FoodName");
         int img = getIntent().getIntExtra("FoodImage", 0);
         String rate = getIntent().getStringExtra("FoodRate");
+        String des = getIntent().getStringExtra("FoodDes");
         binding.foodName.setText(name);
         binding.foodRate.setText(rate);
         binding.foodImg.setImageResource(img);
         binding.bluredImg.setImageResource(img);
+        binding.foodDes.setText(des);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             binding.bluredImg.setRenderEffect(RenderEffect.createBlurEffect(300,300, Shader.TileMode.MIRROR));
         }

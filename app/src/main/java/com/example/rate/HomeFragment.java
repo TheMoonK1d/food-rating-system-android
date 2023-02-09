@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.MultiAutoCompleteTextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class HomeFragment<MainFragmentActivity> extends Fragment implements HomeFoodInterface {
@@ -42,12 +46,13 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
     private void setUp(){
         String[] foodNames = getResources().getStringArray(R.array.lst_name);
         String[] foodRate = getResources().getStringArray(R.array.lst_rate);
-
+        String [] foodDes = getResources().getStringArray(R.array.lst_des);
         for (int i = 0; i< foodNames.length; i++){
             foodHomeModels.add(new FoodHomeModel(
                     foodNames[i],
                     foodRate[i],
-                    foodHomeImg[i]
+                    foodHomeImg[i],
+                    foodDes[i]
             ));
         }
     }
@@ -68,7 +73,7 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
         FoodHomeModelAdapter adapter = new FoodHomeModelAdapter(homeContext, foodHomeModels, this);
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(homeContext, 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(homeContext, 2));
 
 
 
@@ -86,6 +91,8 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
     }
 
 
+
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -99,6 +106,7 @@ public class HomeFragment<MainFragmentActivity> extends Fragment implements Home
         intent.putExtra("FoodName",foodHomeModels.get(position).getName());
         intent.putExtra("FoodImage",foodHomeModels.get(position).getImage());
         intent.putExtra("FoodRate",foodHomeModels.get(position).getRated());
+        intent.putExtra("FoodDes",foodHomeModels.get(position).getDes());
         getActivity().startActivity(intent);
     }
 }

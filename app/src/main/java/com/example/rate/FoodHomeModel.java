@@ -9,17 +9,23 @@ public class FoodHomeModel {
         return Rated;
     }
 
+    public String getDes() {
+        return Des;
+    }
+
     public int getImage() {
         return Image;
     }
 
-    public FoodHomeModel(String name, String rated, int image) {
+    public FoodHomeModel(String name, String rated, int image, String des) {
         Name = name;
         Rated = rated;
         Image = image;
+        Des = des;
     }
 
     String Name;
     String Rated;
+    String Des;
     int Image;
 }

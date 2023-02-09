@@ -86,7 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/food_name4" />
 
         <TextView
-            android:id="@+id/food_name3"
+            android:id="@+id/food_des"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_thin"
@@ -143,12 +143,12 @@
             android:id="@+id/rateBar"
             android:layout_width="239dp"
             android:layout_height="51dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginBottom="20dp"
             android:max="5"
             android:stepSize="1"
+            app:layout_constraintBottom_toTopOf="@+id/rate_btn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/food_name3" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/rate_btn"
